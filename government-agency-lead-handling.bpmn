@@ -7,38 +7,38 @@
 
     <bpmn:userTask id="Task_SecurityClearance" name="Security Clearance Check">
       <bpmn:documentation>Verify required security clearances and certifications</bpmn:documentation>
-      <bpmn:incoming>Flow_1</bpmn:incoming>
-      <bpmn:outgoing>Flow_2</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:userTask id="Task_ProcurementProcess" name="Identify Procurement Process">
       <bpmn:documentation>Determine applicable procurement regulations and requirements</bpmn:documentation>
-      <bpmn:incoming>Flow_2</bpmn:incoming>
-      <bpmn:outgoing>Flow_3</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:userTask id="Task_BudgetCycle" name="Budget Cycle Alignment">
       <bpmn:documentation>Analyze and align with agency budget cycles</bpmn:documentation>
-      <bpmn:incoming>Flow_3</bpmn:incoming>
-      <bpmn:outgoing>Flow_4</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:userTask id="Task_ComplianceRequirements" name="Compliance Requirements">
       <bpmn:documentation>Document all compliance and regulatory requirements</bpmn:documentation>
-      <bpmn:incoming>Flow_4</bpmn:incoming>
-      <bpmn:outgoing>Flow_5</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:endEvent id="EndEvent_ProcessComplete" name="Process Complete">
