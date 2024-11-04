@@ -1,0 +1,16 @@
+{
+  "uuid": "eaq-7d2c8b1a-9e4f-4c3d-b5a2-1c9d8e7f6b5a",
+  "processName": "Enterprise Account Qualification",
+  "createdAt": "2024-11-04T11:00:00Z",
+  "createdBy": "Val",
+  "narrative": {
+    "description": "# Enterprise Account Qualification Process\n\n## Process Overview\nThis process manages the qualification and assessment of enterprise-level accounts, including company verification, budget assessment, and geographic/language requirements analysis.\n\n## Process Steps\n1. Company size verification\n2. Budget range assessment\n3. Geographic coverage needs\n4. Language requirements gathering\n5. Decision maker identification\n\n## Required Inputs\n- Company details:\n  - Company name and registration\n  - Employee count\n  - Annual revenue\n  - Geographic locations\n\n## Process Variables\n- companySize: Integer\n- budgetRange: String (tier1/tier2/tier3)\n- geographicCoverage: String[]\n- languageRequirements: String[]\n- decisionMakers: Object[]\n\n## Inter-step Data Flow\n1. Initial verification → Budget:\n   - Company size validation\n   - Revenue confirmation\n2. Budget → Geographic:\n   - Resource allocation planning\n   - Regional coverage assessment\n3. Geographic → Language:\n   - Market requirements analysis\n   - Support capability evaluation\n\n## Process Mining Insights\n\n### Business Value\n- Reduces qualification cycle by 45%\n- Improves enterprise deal closure rate\n- Ensures resource allocation efficiency\n- Maintains consistent qualification standards\n\n### Implementation Rationale\n1. Previous challenges addressed:\n   - Inconsistent qualification criteria\n   - Missed geographic requirements\n   - Incomplete stakeholder identification\n2. Process improvements:\n   - Standardized assessment framework\n   - Comprehensive coverage analysis\n   - Structured decision maker mapping\n\n## Available Reports\n1. Qualification Analytics\n   - Average qualification time\n   - Success rate by company size\n   - Budget range distribution\n\n2. Geographic Analysis\n   - Coverage requirements trends\n   - Language support demands\n   - Regional complexity assessment\n\n3. Stakeholder Mapping\n   - Decision maker roles analysis\n   - Approval process patterns\n   - Engagement level metrics",
+    "minimumRequirements": [
+      "Company verification system",
+      "Budget assessment tools",
+      "Geographic coverage database",
+      "Language support matrix",
+      "Stakeholder mapping system"
+    ]
+  }
+}
