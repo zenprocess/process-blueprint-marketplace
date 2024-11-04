@@ -1,0 +1,15 @@
+{
+  "uuid": "galh-9d4f8e3c-6b5a-4d2e-a7c3-8b2f1e5d4c3b",
+  "processName": "Government Agency Lead Handling",
+  "createdAt": "2024-11-04T10:30:00Z",
+  "createdBy": "Val",
+  "narrative": {
+    "description": "# Government Agency Lead Handling Process\n\n## Process Overview\nThis process manages the specialized handling of government agency leads, including security clearance verification, procurement process alignment, and compliance requirements.\n\n## Process Steps\n1. Security clearance verification\n2. Procurement process identification\n3. Budget cycle alignment\n4. Compliance requirements documentation\n\n## Required Inputs\n- Agency details:\n  - Agency name and department\n  - Required security clearance level\n  - Procurement method preferences\n  - Fiscal year budget cycle\n\n## Process Variables\n- clearanceLevel: String (confidential/secret/topSecret)\n- procurementType: String (direct/rfp/gsa)\n- fiscalYear: String\n- budgetAvailability: Date\n- complianceRequirements: String[]\n\n## Inter-step Data Flow\n1. Initial intake → Security clearance:\n   - Clearance requirements verification\n   - Team certification validation\n2. Security → Procurement:\n   - Procurement method determination\n   - Contract vehicle identification\n3. Procurement → Budget:\n   - Fiscal year alignment\n   - Fund availability confirmation\n\n## Process Mining Insights\n\n### Business Value\n- Ensures compliance with government regulations\n- Reduces procurement cycle time by 40%\n- Improves bid success rate by 35%\n- Maintains security protocol adherence\n\n### Implementation Rationale\n1. Previous challenges addressed:\n   - Security clearance verification delays\n   - Missed procurement deadlines\n   - Budget cycle misalignment\n2. Process improvements:\n   - Standardized security protocols\n   - Streamlined procurement tracking\n   - Automated compliance checks\n\n## Available Reports\n1. Security Compliance\n   - Clearance level distribution\n   - Verification time metrics\n   - Security requirement trends\n\n2. Procurement Analytics\n   - Method distribution analysis\n   - Processing time by type\n   - Success rate by approach\n\n3. Budget Cycle Impact\n   - Fiscal year timing analysis\n   - Fund availability patterns\n   - Budget utilization metrics",
+    "minimumRequirements": [
+      "Security clearance verification system",
+      "Procurement process documentation",
+      "Budget cycle tracking system",
+      "Compliance monitoring tools"
+    ]
+  }
+}
