@@ -11,24 +11,33 @@
     </bpmn:serviceTask>
 
     <bpmn:userTask id="Task_BudgetAssessment" name="Assess Budget">
-      <bpmn:incoming>Flow_2</bpmn:incoming>
-      <bpmn:outgoing>Flow_3</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:formDefinition formId="Form_EnterpriseQual" />
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:userTask id="Task_GeographicCoverage" name="Assess Geographic Needs">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="Form_EnterpriseQual" />
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_3</bpmn:incoming>
       <bpmn:outgoing>Flow_4</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:userTask id="Task_LanguageRequirements" name="Gather Language Requirements">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="Form_EnterpriseQual" />
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_4</bpmn:incoming>
       <bpmn:outgoing>Flow_5</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:userTask id="Task_DecisionMaker" name="Identify Decision Makers">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="Form_EnterpriseQual" />
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_5</bpmn:incoming>
       <bpmn:outgoing>Flow_6</bpmn:outgoing>
     </bpmn:userTask>
