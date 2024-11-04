@@ -7,8 +7,6 @@
 
     <bpmn:serviceTask id="Task_LeadScoring" name="Score Lead">
       <bpmn:documentation>Automatically score lead based on organization type and provided information</bpmn:documentation>
-      <bpmn:incoming>Flow_1</bpmn:incoming>
-      <bpmn:outgoing>Flow_2</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="lead-scoring" />
         <zeebe:ioMapping>
@@ -16,6 +14,8 @@
           <zeebe:output source="=score" target="leadScore" />
         </zeebe:ioMapping>
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
     </bpmn:serviceTask>
 
     <bpmn:businessRuleTask id="Task_TeamAssignment" name="Assign Regional Team">
@@ -26,12 +26,12 @@
 
     <bpmn:userTask id="Task_LeadQualification" name="Review Lead">
       <bpmn:documentation>Review and process the lead within SLA timeframe</bpmn:documentation>
-      <bpmn:incoming>Flow_3</bpmn:incoming>
-      <bpmn:outgoing>Flow_4</bpmn:outgoing>
       <bpmn:extensionElements>
         <zeebe:assignmentDefinition assignee="${assignedTeam}" />
         <zeebe:formDefinition formId="Form_LeadReview" />
       </bpmn:extensionElements>
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
     </bpmn:userTask>
 
     <bpmn:serviceTask id="Task_SaveToCRM" name="Save to CRM">
