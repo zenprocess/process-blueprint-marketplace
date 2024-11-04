@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "label": "Company Size",
+      "type": "number",
+      "id": "Field_companySize",
+      "key": "companySize",
+      "validate": {
+        "min": 1
+      }
+    },
+    {
+      "label": "Budget Range",
+      "type": "select",
+      "values": [
+        {"label": "$0-100K", "value": "tier1"},
+        {"label": "$100K-500K", "value": "tier2"},
+        {"label": "$500K+", "value": "tier3"}
+      ],
+      "id": "Field_budgetRange",
+      "key": "budgetRange"
+    },
+    {
+      "label": "Geographic Coverage",
+      "type": "checklist",
+      "values": [
+        {"label": "North America", "value": "na"},
+        {"label": "Europe", "value": "eu"},
+        {"label": "Asia Pacific", "value": "apac"},
+        {"label": "Latin America", "value": "latam"}
+      ],
+      "id": "Field_geographicCoverage",
+      "key": "geographicCoverage"
+    },
+    {
+      "label": "Language Requirements",
+      "type": "checklist",
+      "values": [
+        {"label": "English", "value": "en"},
+        {"label": "Spanish", "value": "es"},
+        {"label": "French", "value": "fr"},
+        {"label": "German", "value": "de"},
+        {"label": "Japanese", "value": "ja"}
+      ],
+      "id": "Field_languageRequirements",
+      "key": "languageRequirements"
+    },
+    {
+      "label": "Decision Maker Information",
+      "type": "textarea",
+      "id": "Field_decisionMakers",
+      "key": "decisionMakers"
+    }
+  ],
+  "type": "default",
+  "id": "Form_EnterpriseQual",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "schemaVersion": 16
+}

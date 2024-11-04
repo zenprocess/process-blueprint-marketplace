@@ -10,10 +10,11 @@
       <bpmn:incoming>Flow_1</bpmn:incoming>
       <bpmn:outgoing>Flow_2</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:inputParameter name="organizationType">${submission.organizationType}</camunda:inputParameter>
-          <camunda:outputParameter name="leadScore">${score}</camunda:outputParameter>
-        </camunda:inputOutput>
+        <zeebe:taskDefinition type="lead-scoring" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=submission.organizationType" target="organizationType" />
+          <zeebe:output source="=score" target="leadScore" />
+        </zeebe:ioMapping>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
 

@@ -1,0 +1,59 @@
+{
+  "components": [
+    {
+      "label": "Required Clearance Level",
+      "type": "select",
+      "values": [
+        {"label": "Confidential", "value": "confidential"},
+        {"label": "Secret", "value": "secret"},
+        {"label": "Top Secret", "value": "topsecret"}
+      ],
+      "id": "Field_clearanceLevel",
+      "key": "clearanceLevel"
+    },
+    {
+      "label": "Clearance Verified",
+      "type": "checkbox",
+      "id": "Field_clearanceVerified",
+      "key": "clearanceVerified"
+    },
+    {
+      "label": "Procurement Type",
+      "type": "select",
+      "values": [
+        {"label": "Direct Purchase", "value": "direct"},
+        {"label": "RFP Required", "value": "rfp"},
+        {"label": "GSA Schedule", "value": "gsa"}
+      ],
+      "id": "Field_procurementType",
+      "key": "procurementType"
+    },
+    {
+      "label": "Fiscal Year",
+      "type": "textfield",
+      "id": "Field_fiscalYear",
+      "key": "fiscalYear"
+    },
+    {
+      "label": "Budget Availability Date",
+      "type": "datetime",
+      "id": "Field_budgetAvailability",
+      "key": "budgetAvailability"
+    },
+    {
+      "label": "Compliance Requirements",
+      "type": "textarea",
+      "id": "Field_complianceRequirements",
+      "key": "complianceRequirements"
+    }
+  ],
+  "type": "default",
+  "id": "Form_GovAgencyLead",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "schemaVersion": 16
+}

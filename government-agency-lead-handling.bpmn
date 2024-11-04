@@ -10,14 +10,7 @@
       <bpmn:incoming>Flow_1</bpmn:incoming>
       <bpmn:outgoing>Flow_2</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="clearanceLevel" label="Required Clearance Level" type="enum">
-            <camunda:value id="confidential" name="Confidential" />
-            <camunda:value id="secret" name="Secret" />
-            <camunda:value id="topsecret" name="Top Secret" />
-          </camunda:formField>
-          <camunda:formField id="clearanceVerified" label="Clearance Verified" type="boolean" />
-        </camunda:formData>
+        <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
     </bpmn:userTask>
 

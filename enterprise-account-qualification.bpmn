@@ -14,13 +14,7 @@
       <bpmn:incoming>Flow_2</bpmn:incoming>
       <bpmn:outgoing>Flow_3</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="budgetRange" label="Budget Range" type="enum">
-            <camunda:value id="tier1" name="$0-100K" />
-            <camunda:value id="tier2" name="$100K-500K" />
-            <camunda:value id="tier3" name="$500K+" />
-          </camunda:formField>
-        </camunda:formData>
+        <zeebe:formDefinition formId="Form_EnterpriseQual" />
       </bpmn:extensionElements>
     </bpmn:userTask>
 
