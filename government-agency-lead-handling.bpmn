@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_GALH" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="government-agency-lead-handling" name="Government Agency Lead Handling" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_GovLeadReceived" name="Government Lead Received">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:userTask id="Task_SecurityClearance" name="Security Clearance Check">
+      <bpmn:documentation>Verify required security clearances and certifications</bpmn:documentation>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="clearanceLevel" label="Required Clearance Level" type="enum">
+            <camunda:value id="confidential" name="Confidential" />
+            <camunda:value id="secret" name="Secret" />
+            <camunda:value id="topsecret" name="Top Secret" />
+          </camunda:formField>
+          <camunda:formField id="clearanceVerified" label="Clearance Verified" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+
+    <bpmn:userTask id="Task_ProcurementProcess" name="Identify Procurement Process">
+      <bpmn:documentation>Determine applicable procurement regulations and requirements</bpmn:documentation>
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="procurementType" label="Procurement Type" type="enum">
+            <camunda:value id="direct" name="Direct Purchase" />
+            <camunda:value id="rfp" name="RFP Required" />
+            <camunda:value id="gsa" name="GSA Schedule" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+
+    <bpmn:userTask id="Task_BudgetCycle" name="Budget Cycle Alignment">
+      <bpmn:documentation>Analyze and align with agency budget cycles</bpmn:documentation>
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="fiscalYear" label="Fiscal Year" type="string" />
+          <camunda:formField id="budgetAvailability" label="Budget Availability Date" type="date" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+
+    <bpmn:userTask id="Task_ComplianceRequirements" name="Compliance Requirements">
+      <bpmn:documentation>Document all compliance and regulatory requirements</bpmn:documentation>
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="complianceChecklist" label="Compliance Checklist" type="string" />
+          <camunda:formField id="regulatoryRequirements" label="Regulatory Requirements" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+    </bpmn:userTask>
+
+    <bpmn:endEvent id="EndEvent_ProcessComplete" name="Process Complete">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+    </bpmn:endEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_GovLeadReceived" targetRef="Task_SecurityClearance" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_SecurityClearance" targetRef="Task_ProcurementProcess" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_ProcurementProcess" targetRef="Task_BudgetCycle" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_BudgetCycle" targetRef="Task_ComplianceRequirements" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_ComplianceRequirements" targetRef="EndEvent_ProcessComplete" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="government-agency-lead-handling">
+      <bpmndi:BPMNShape id="StartEvent_GovLeadReceived_di" bpmnElement="StartEvent_GovLeadReceived">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Task_SecurityClearance_di" bpmnElement="Task_SecurityClearance">
+        <dc:Bounds x="240" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Task_ProcurementProcess_di" bpmnElement="Task_ProcurementProcess">
+        <dc:Bounds x="390" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Task_BudgetCycle_di" bpmnElement="Task_BudgetCycle">
+        <dc:Bounds x="540" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Task_ComplianceRequirements_di" bpmnElement="Task_ComplianceRequirements">
+        <dc:Bounds x="690" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="EndEvent_ProcessComplete_di" bpmnElement="EndEvent_ProcessComplete">
+        <dc:Bounds x="842" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="340" y="120" />
+        <di:waypoint x="390" y="120" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="490" y="120" />
+        <di:waypoint x="540" y="120" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="640" y="120" />
+        <di:waypoint x="690" y="120" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="790" y="120" />
+        <di:waypoint x="842" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
