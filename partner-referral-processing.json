@@ -1,0 +1,16 @@
+{
+  "uuid": "prp-5a1b9c3d-8e4f-2d7a-6b5c-4f3e2d1a9b8c",
+  "processName": "Partner Referral Processing",
+  "createdAt": "2024-11-05T12:00:00Z",
+  "createdBy": "Val",
+  "narrative": {
+    "description": "# Partner Referral Processing\n\n## Process Overview\nThis process manages the handling of partner referrals, including partner validation, referral qualification, commission calculation, and sales team alignment.\n\n## Process Steps\n1. Partner status validation\n2. Referral qualification\n3. Commission calculation\n4. Sales team alignment\n5. Partner notification\n\n## Required Inputs\n- Partner details:\n  - Partner ID\n  - Partnership level\n  - Historical performance\n- Referral information:\n  - Customer details\n  - Deal size\n  - Product interest\n\n## Process Variables\n- partnerStatus: String\n- referralQuality: Integer (0-100)\n- commissionRate: Decimal\n- salesTeam: String\n- notificationStatus: String\n\n## Inter-step Data Flow\n1. Partner validation → Qualification:\n   - Partnership level verification\n   - Historical performance review\n2. Qualification → Commission:\n   - Deal size assessment\n   - Partnership tier consideration\n3. Commission → Sales alignment:\n   - Territory rules application\n   - Team capacity check\n\n## Process Mining Insights\n\n### Business Value\n- Accelerates referral processing by 50%\n- Improves partner satisfaction\n- Ensures accurate commission calculation\n- Maintains territory alignment\n\n### Implementation Rationale\n1. Previous challenges addressed:\n   - Delayed referral processing\n   - Commission calculation errors\n   - Territory conflicts\n2. Process improvements:\n   - Automated partner validation\n   - Standardized qualification criteria\n   - Real-time commission calculation\n\n## Available Reports\n1. Partner Performance\n   - Referral volume trends\n   - Qualification success rate\n   - Commission distribution\n\n2. Processing Efficiency\n   - Average processing time\n   - Validation success rate\n   - Territory alignment accuracy\n\n3. Financial Impact\n   - Commission payout analysis\n   - Revenue by partner tier\n   - ROI per partner",
+    "minimumRequirements": [
+      "Partner management system",
+      "Commission calculation engine",
+      "Sales territory database",
+      "Notification system",
+      "CRM integration"
+    ]
+  }
+}
