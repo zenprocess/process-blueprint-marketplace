@@ -19,13 +19,7 @@
       <bpmn:incoming>Flow_2</bpmn:incoming>
       <bpmn:outgoing>Flow_3</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="procurementType" label="Procurement Type" type="enum">
-            <camunda:value id="direct" name="Direct Purchase" />
-            <camunda:value id="rfp" name="RFP Required" />
-            <camunda:value id="gsa" name="GSA Schedule" />
-          </camunda:formField>
-        </camunda:formData>
+        <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
     </bpmn:userTask>
 
@@ -34,10 +28,7 @@
       <bpmn:incoming>Flow_3</bpmn:incoming>
       <bpmn:outgoing>Flow_4</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="fiscalYear" label="Fiscal Year" type="string" />
-          <camunda:formField id="budgetAvailability" label="Budget Availability Date" type="date" />
-        </camunda:formData>
+        <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
     </bpmn:userTask>
 
@@ -46,10 +37,7 @@
       <bpmn:incoming>Flow_4</bpmn:incoming>
       <bpmn:outgoing>Flow_5</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="complianceChecklist" label="Compliance Checklist" type="string" />
-          <camunda:formField id="regulatoryRequirements" label="Regulatory Requirements" type="string" />
-        </camunda:formData>
+        <zeebe:formDefinition formId="Form_GovAgencyLead" />
       </bpmn:extensionElements>
     </bpmn:userTask>
 
