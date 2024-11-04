@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "label": "Lead Notes",
+      "type": "textfield",
+      "id": "Field_leadNotes",
+      "key": "leadNotes"
+    },
+    {
+      "label": "Additional Details",
+      "type": "textfield",
+      "id": "Field_additionalDetails", 
+      "key": "additionalDetails"
+    },
+    {
+      "label": "Organization Type",
+      "type": "select",
+      "values": [
+        {"label": "Embassy", "value": "embassy"},
+        {"label": "Government", "value": "government"},
+        {"label": "Corporate", "value": "corporate"}
+      ],
+      "id": "Field_organizationType",
+      "key": "organizationType"
+    },
+    {
+      "label": "Qualification Status",
+      "type": "select",
+      "values": [
+        {"label": "Qualified", "value": "qualified"},
+        {"label": "Unqualified", "value": "unqualified"}
+      ],
+      "id": "Field_qualificationStatus",
+      "key": "qualificationStatus"
+    }
+  ],
+  "type": "default",
+  "id": "Form_LeadReview",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.28.0"
+  },
+  "schemaVersion": 16
+}

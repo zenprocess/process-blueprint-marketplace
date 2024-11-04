@@ -23,24 +23,13 @@
       <bpmn:outgoing>Flow_3</bpmn:outgoing>
     </bpmn:businessRuleTask>
 
-    <bpmn:userTask id="Task_LeadQualification" name="Review Lead" camunda:assignee="${assignedTeam}">
+    <bpmn:userTask id="Task_LeadQualification" name="Review Lead">
       <bpmn:documentation>Review and process the lead within SLA timeframe</bpmn:documentation>
       <bpmn:incoming>Flow_3</bpmn:incoming>
       <bpmn:outgoing>Flow_4</bpmn:outgoing>
       <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="leadNotes" label="Lead Notes" type="string" />
-          <camunda:formField id="additionalDetails" label="Additional Details" type="string" />
-          <camunda:formField id="organizationType" label="Organization Type" type="enum">
-            <camunda:value id="embassy" name="Embassy" />
-            <camunda:value id="government" name="Government" />
-            <camunda:value id="corporate" name="Corporate" />
-          </camunda:formField>
-          <camunda:formField id="qualificationStatus" label="Qualification Status" type="enum">
-            <camunda:value id="qualified" name="Qualified" />
-            <camunda:value id="unqualified" name="Unqualified" />
-          </camunda:formField>
-        </camunda:formData>
+        <zeebe:assignmentDefinition assignee="${assignedTeam}" />
+        <zeebe:formDefinition formId="Form_LeadReview" />
       </bpmn:extensionElements>
     </bpmn:userTask>
 
