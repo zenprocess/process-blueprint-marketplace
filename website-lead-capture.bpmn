@@ -18,6 +18,9 @@
     </bpmn:serviceTask>
     <bpmn:businessRuleTask id="Task_TeamAssignment" name="Assign Regional Team">
       <bpmn:documentation>Assign to regional sales team based on location and score</bpmn:documentation>
+      <bpmn:extensionElements>
+        <zeebe:calledDecision decisionId="Decision_AssignTeam" resultVariable="assignedTeam" />
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_2</bpmn:incoming>
       <bpmn:outgoing>Flow_3</bpmn:outgoing>
     </bpmn:businessRuleTask>
@@ -31,6 +34,9 @@
       <bpmn:outgoing>Flow_4</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:serviceTask id="Task_SaveToCRM" name="Save to CRM">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="save-to-crm" />
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_4</bpmn:incoming>
       <bpmn:outgoing>Flow_5</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -43,10 +49,15 @@
     <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_LeadQualification" targetRef="Task_SaveToCRM" />
     <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_SaveToCRM" targetRef="EndEvent_ProcessComplete" />
     <bpmn:boundaryEvent id="Timer_SLA" attachedToRef="Task_LeadQualification">
+      <bpmn:outgoing>Flow_SLA</bpmn:outgoing>
       <bpmn:timerEventDefinition>
         <bpmn:timeDuration>PT2H</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
+    <bpmn:endEvent id="EndEvent_SLAEscalation" name="SLA Escalation">
+      <bpmn:incoming>Flow_SLA</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_SLA" sourceRef="Timer_SLA" targetRef="EndEvent_SLAEscalation" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="website-lead-capture">
